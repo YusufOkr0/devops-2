@@ -37,7 +37,7 @@ public class CourseServiceImpl implements CourseService {
                 .orElseThrow(() -> new ResourceNotFoundException("Course not found with id: " + id));
         
         if (course.isDeleted()) {
-            throw new ResourceNotFoundException("Course not found with id: " + id);
+            throw new ResourceNotFoundException("Course not found with id: " + id)
         }
 
         courseMapper.updateEntityFromRequest(request, course);
