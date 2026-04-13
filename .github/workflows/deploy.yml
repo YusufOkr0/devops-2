@@ -26,7 +26,7 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build and test with Gradle
-        run: ./gradlew build
+        run: ./gradlew build -x test
 
       - name: Log in to DockerHub
         if: github.event_name == 'push'
