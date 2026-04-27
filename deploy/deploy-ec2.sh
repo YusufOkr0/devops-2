@@ -1,11 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Idempotent deploy script run on EC2.
-# Responsibilities:
-#  - Ensure we're in the compose project directory
-#  - Pull the latest image from Docker Hub
-#  - Restart the compose stack
 
 APP_DIR="${APP_DIR:-$HOME/school-management}"
 COMPOSE_FILE="${COMPOSE_FILE:-docker-compose.yml}"
@@ -27,7 +22,6 @@ echo "Pulling image: $IMAGE"
 docker pull "$IMAGE"
 
 echo "Restarting stack in $APP_DIR"
-# Prefer docker compose (v2) but fall back to docker-compose (v1)
 if docker compose version >/dev/null 2>&1; then
   docker compose -f "$COMPOSE_FILE" down
   docker compose -f "$COMPOSE_FILE" up -d
