@@ -11,7 +11,7 @@ public class SchoolManagement2Application {
         /***
 
          * TEST
-         *
+         *test
          */
 
     }
