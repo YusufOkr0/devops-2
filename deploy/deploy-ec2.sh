@@ -31,3 +31,6 @@ else
 fi
 
 echo "Done."
+
+echo "Cleaning up unused Docker images..."
+docker image prune -f
