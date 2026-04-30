@@ -65,9 +65,7 @@ jobs:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_KEY }}
-          source: |
-            deploy/deploy-ec2.sh
-            docker-compose.yml
+          source: deploy/deploy-ec2.sh,docker-compose.yml
           target: "~/school-management"
           overwrite: true
 
